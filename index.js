@@ -15,18 +15,18 @@ const gottaCatchEmAll = async () => {
 const displayPokemonList = () => {
   const pokemonUl = document.querySelector('ul');
   pokemonUl.innerHTML = ''; 
-
   for (let i = 0; i < pokemonList.length; i++) {
     const pokemon = pokemonList[i];
     const pokemonLi = document.createElement('li');
     pokemonLi.innerText = pokemon.name;
-
+    
     pokemonLi.addEventListener('click', () => {
       const pokemonNumber = pokemonNumberFromUrl(pokemon.url);
       pokemonDetails(pokemonNumber);
-      pokemonUl.style.display = 'none';
+      pokemonUl.innerHTML = ''; 
     });
-
+    
+    
     pokemonUl.appendChild(pokemonLi);
   }
 };
